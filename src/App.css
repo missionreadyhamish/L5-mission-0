@@ -101,10 +101,14 @@ body {
 }
 
 .article {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   background: white;
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  height: 100%;
 }
 
 .article-image {
@@ -116,10 +120,12 @@ body {
 .article-title {
   padding: 10px;
   margin: 0;
+  font-size: 20px;
 }
 
-.article-description {
-  padding: 0 10px 10px;
+.article-date {
+  padding: 0 10px 5px;
+  font-size: 13px;
 }
 
 /* Footer Styles */
