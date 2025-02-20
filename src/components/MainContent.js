@@ -1,10 +1,27 @@
-import React from "react";
+import React, { useEffect } from "react";
 import looksharp from "../images/looksharp.png";
 import ocr from "../images/ocr.png";
 import farm from "../images/farm.png";
 import nzme from "../images/nzme.png";
 
 function MainContent() {
+  useEffect(() => {
+    // Load weather widget script
+    const script = document.createElement("script");
+    script.src = "https://weatherwidget.io/js/widget.min.js";
+    script.async = true;
+    script.id = "weatherwidget-io-js";
+    document.body.appendChild(script);
+
+    return () => {
+      // Cleanup script on component unmount
+      const existingScript = document.getElementById("weatherwidget-io-js");
+      if (existingScript) {
+        document.body.removeChild(existingScript);
+      }
+    };
+  }, []);
+
   return (
     <main className="main-content">
       <nav className="category-nav">
@@ -38,16 +55,19 @@ function MainContent() {
           </li>
         </ul>
       </nav>
-      <div className="banner">
-        <div className="search-container">
-          <input
-            type="text"
-            placeholder="Search articles..."
-            className="search-bar"
-          />
-          <button className="search-button">Search</button>
-        </div>
+
+      <div className="weather-banner">
+        <a
+          className="weatherwidget-io"
+          href="https://forecast7.com/en/n36d85174d76/auckland/"
+          data-label_1="AUCKLAND"
+          data-label_2="WEATHER"
+          data-theme="original"
+        >
+          AUCKLAND WEATHER
+        </a>
       </div>
+
       <div className="container">
         <div className="articles">
           <article className="article">
