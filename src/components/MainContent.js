@@ -7,6 +7,31 @@ import nzme from "../images/nzme.png";
 function MainContent() {
   return (
     <main className="main-content">
+      <nav className="category-nav">
+        <ul>
+          <li>
+            <a href="#home">Home</a>
+          </li>
+          <li>
+            <h1>|</h1>
+          </li>
+          <li>
+            <a href="#business">Business</a>
+          </li>
+          <li>
+            <a href="#politics">Politics</a>
+          </li>
+          <li>
+            <a href="#technology">Technology</a>
+          </li>
+          <li>
+            <a href="#sports">Sports</a>
+          </li>
+          <li>
+            <a href="#entertainment">Entertainment</a>
+          </li>
+        </ul>
+      </nav>
       <div className="banner">
         <div className="search-container">
           <input
@@ -25,7 +50,7 @@ function MainContent() {
               Look Sharp fined almost $300k for misleading pricing, ignoring
               complaints
             </h2>
-            <p className="article-date">19 Feb, 2025 05:27 PM</p>
+            <p className="article-date">19 Feb, 2025 0 5:27 PM</p>
           </article>
           <article className="article">
             <img src={ocr} alt="Upcoming Event" className="article-image" />
