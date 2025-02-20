@@ -16,6 +16,9 @@ function MainContent() {
             <h1>|</h1>
           </li>
           <li>
+            <a href="#new-news">Latest News</a>
+          </li>
+          <li>
             <a href="#business">Business</a>
           </li>
           <li>
@@ -29,6 +32,9 @@ function MainContent() {
           </li>
           <li>
             <a href="#entertainment">Entertainment</a>
+          </li>
+          <li>
+            <a href="#world">World</a>
           </li>
         </ul>
       </nav>

@@ -1,6 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
+import profile from "../images/profile.png";
+import subscribe from "../images/subscribe.png";
+import SearchOverlay from "./SearchOverlay";
 
 function Header() {
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+
+  const toggleSearch = () => {
+    setIsSearchOpen(!isSearchOpen);
+  };
+
   return (
     <header className="header">
       <div className="container">
@@ -8,17 +17,27 @@ function Header() {
         <nav>
           <ul>
             <li>
-              <a href="#home">Home</a>
+              <button className="search-btn" onClick={toggleSearch}>
+                <i className="fas fa-search"></i>
+                Search
+              </button>
             </li>
             <li>
-              <a href="#about">About</a>
+              <button className="subscribe">
+                <img src={subscribe} alt="Subscribe" className="button-icon" />
+                Subscribe
+              </button>
             </li>
             <li>
-              <a href="#contact">Contact</a>
+              <button className="sign-in">
+                <img src={profile} alt="Profile" className="button-icon" />
+                Sign In
+              </button>
             </li>
           </ul>
         </nav>
       </div>
+      <SearchOverlay isOpen={isSearchOpen} onClose={toggleSearch} />
     </header>
   );
 }
